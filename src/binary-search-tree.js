@@ -37,29 +37,24 @@ class BinarySearchTree {
           return this;
       }
 
-      let current = this.roots
+      let c = this.roots
       while (current) {
 
 
-          if (current.data <= data) {
-              if (current.right === null) {
-                  current.right = new Node(data);
+          if (c.data <= data) {
+              if (c.right === null) {
+                  c.right = new Node(data);
                   return this;
               }
-              current = current.right;
+              c = c.right;
           }
-
-
-          
-          if (current.data > data) {
-            if (current.left === null) {
-                current.left = new Node(data);
+          if (c.data > data) {
+            if (c.left === null) {
+                c.left = new Node(data);
                 return this;
             }
-            current = current.left;
+            c = c.left;
         }
-
-
       }
   }
 
@@ -67,59 +62,56 @@ class BinarySearchTree {
     if (this.roots === null) {
       return false;
   }
-    let current = this.roots
-      while (current ) {
+    let c = this.roots
+      while (c ) {
 
-        if (current.data <= data) {
-          if (current.data === data) {
+        if (c.data <= data) {
+          if (c.data === data) {
             return true;
          }
-          if (current.right === null) {
+          if (c.right === null) {
              return false;
           }
-          current = current.right;
+          c = c.right;
       }
 
-      if (current.data > data) {
-        if (current.data === data) {
+      if (c.data > data) {
+        if (c.data === data) {
           return true;
        }
-        if (current.left === null) {
+        if (c.left === null) {
             return false;
         }
-        current = current.left;
-    }
-    
+        c = c.left;
+    }    
  }
  
   
   }
-
   find(data) {
     if (this.roots === null) {
       return false;
     }
-    let current = this.roots
-    while (current) {
+    let c = this.roots
+    while (c) {
   
-      if (current.data <= data) {
-        if (current.data === data) {
-          return current;
+      if (c.data <= data) {
+        if (c.data === data) {
+          return c;
         }
-        if (current.right === null) {
+        if (c.right === null) {
           return null;
         }
-        current = current.right;
-      }
-  
-      if (current.data > data) {
-        if (current.data === data) {
-          return current;
+        c = c.right;
+      }  
+      if (c.data > data) {
+        if (c.data === data) {
+          return c;
         }
-        if (current.left === null) {
+        if (c.left === null) {
           return null;
         }
-        current = current.left;
+        c = c.left;
       }
     }
   }
@@ -152,29 +144,27 @@ class BinarySearchTree {
     if (this.roots === null) {
         return null;
     }
-    let current = this.roots;
+    let c = this.roots;
     let minValue = this.roots.data;
-    while (current.left !== null) {
-        minValue = current.left.data;
-        current = current.left;
+    while (c.left !== null) {
+        minValue = c.left.data;
+        c = c.left;
     }
     return minValue;
 }
-
 
 max() {
     if (this.roots === null) {
         return null;
     }
-    let current = this.roots;
+    let c = this.roots;
     let maxValue = this.roots.data;
-    while (current.right !== null) {
-        maxValue = current.right.data;
-        current = current.right;
+    while (c.right !== null) {
+        maxValue = c.right.data;
+        c = c.right;
     }
     return maxValue;
 }
-
 }
 
 
