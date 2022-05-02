@@ -38,9 +38,7 @@ class BinarySearchTree {
       }
 
       let c = this.roots
-      while (current) {
-
-
+      while (c) {
           if (c.data <= data) {
               if (c.right === null) {
                   c.right = new Node(data);
@@ -166,10 +164,6 @@ max() {
     return maxValue;
 }
 }
-
-
-
-
 
 module.exports = {
   BinarySearchTree
