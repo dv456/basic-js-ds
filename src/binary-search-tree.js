@@ -24,11 +24,9 @@ class BinarySearchTree {
   root() {
     return this.roots
   }
-
   getData(data) {
     return this.arrData
   }
-
   add(data) {
         this.arrData[this.size] = data
         this.size++
@@ -36,7 +34,6 @@ class BinarySearchTree {
           this.roots = new Node(data);
           return this;
       }
-
       let c = this.roots
       while (c) {
           if (c.data <= data) {
@@ -62,7 +59,6 @@ class BinarySearchTree {
   }
     let c = this.roots
       while (c ) {
-
         if (c.data <= data) {
           if (c.data === data) {
             return true;
@@ -118,7 +114,6 @@ class BinarySearchTree {
     this.add(curNum)
     return this
   }
-
   remove(data) {
     
     if (this.has(data) === false) {
@@ -133,9 +128,7 @@ class BinarySearchTree {
         if(data === arrData[count]) {}
         else {this.clear(count, arrData)}
         count++
-    }
-
-     
+    }     
   }
 
   min() {
