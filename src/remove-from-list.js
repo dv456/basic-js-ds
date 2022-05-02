@@ -23,8 +23,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  * }
  */
 function removeKFromList(l, k) {
-  while (l.value === k) {
-    l = l.next;
+  class ListNode {
+    constructor(x, next = null) {
+      this.value = x;
+      this.next = null;
+    }
   }
 
   let current = l;
