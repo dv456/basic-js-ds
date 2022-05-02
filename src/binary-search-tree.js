@@ -37,26 +37,26 @@ class BinarySearchTree {
           return this;
       }
 
-      let cur = this.roots
-      while (cur) {
+      let current = this.roots
+      while (current) {
 
 
-          if (cur.data <= data) {
-              if (cur.right === null) {
-                  cur.right = new Node(data);
+          if (current.data <= data) {
+              if (current.right === null) {
+                  current.right = new Node(data);
                   return this;
               }
-              cur = cur.right;
+              current = current.right;
           }
 
 
           
-          if (cur.data > data) {
-            if (cur.left === null) {
-                cur.left = new Node(data);
+          if (current.data > data) {
+            if (current.left === null) {
+                current.left = new Node(data);
                 return this;
             }
-            cur = cur.left;
+            current = current.left;
         }
 
 
@@ -67,26 +67,27 @@ class BinarySearchTree {
     if (this.roots === null) {
       return false;
   }
-    let cur = this.roots
-      while (cur ) {
+    let current = this.roots
+      while (current ) {
 
-        if (cur.data <= data) {
-          if (cur.data === data) {
+        if (current.data <= data) {
+          if (current.data === data) {
             return true;
          }
-          if (cur.right === null) {
+          if (current.right === null) {
              return false;
           }
-          cur = cur.right;
+          current = current.right;
       }
 
-      if (cur.data === data) {
+      if (current.data > data) {
+        if (current.data === data) {
           return true;
        }
-        if (cur.left === null) {
+        if (current.left === null) {
             return false;
         }
-        cur = cur.left;
+        current = current.left;
     }
     
  }
@@ -98,27 +99,27 @@ class BinarySearchTree {
     if (this.roots === null) {
       return false;
     }
-    let cur = this.roots
-    while (cur) {
+    let current = this.roots
+    while (current) {
   
-      if (cur.data <= data) {
-        if (cur.data === data) {
-          return cur;
+      if (current.data <= data) {
+        if (current.data === data) {
+          return current;
         }
-        if (cur.right === null) {
+        if (current.right === null) {
           return null;
         }
-        cur = cur.right;
+        current = current.right;
       }
   
-      if (cur.data > data) {
-        if (cur.data === data) {
-          return cur;
+      if (current.data > data) {
+        if (current.data === data) {
+          return current;
         }
-        if (cur.left === null) {
+        if (current.left === null) {
           return null;
         }
-        cur = cur.left;
+        current = current.left;
       }
     }
   }
