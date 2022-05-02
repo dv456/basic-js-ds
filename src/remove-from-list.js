@@ -22,12 +22,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  *   }
  * }
  */
- class ListNode {
-    constructor(x, next = null) {
-      this.value = x;
-      this.next = null;
-    }
-  }
 function removeKFromList(l, k) {
   while (l.value === k) {
     l = l.next;
@@ -45,3 +39,7 @@ function removeKFromList(l, k) {
 
   return l;
 }
+
+module.exports = {
+  removeKFromList
+};
