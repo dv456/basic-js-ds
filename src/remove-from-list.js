@@ -30,13 +30,13 @@ function removeKFromList(l, k) {
     }
   }
 
-  let current = l;
+  let cur = l;
 
-  while (current.next) {
-    if (current.next.value === k) {
-      current.next = current.next.next;
+  while (cur.next) {
+    if (cur.next.value === k) {
+      cur.next = cur.next.next;
     } else {
-      current = current.next;
+      cur = cur.next;
     }
   }
 
